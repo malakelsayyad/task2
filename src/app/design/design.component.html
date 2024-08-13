@@ -1,0 +1,21 @@
+<h1 class="text-center text-black fw-bolder pt-3 py-4 ">Welcome to our store </h1>
+<div class="container">
+    <div class="row ">
+        @for (product of products; track $index) {
+        <div class="col-md-4 gy-4 ">
+            <div class="bg-white rounded-4 p-2 shadow-lg" style="height:32rem">
+                <div class="text-center py-3 border border-2 rounded-4">
+                    <img [src]="product.image" alt="">
+                </div>
+                <div class="ps-2">
+                    <h3>Title : {{product.title.split(' ',3).join(' ')}}</h3>
+                    <p>Description : {{product.description.split(' ',9).join(' ')}} </p>
+                    <h4>Price : {{product.price}} $</h4>
+                    <h5>Rating : {{product.rating.rate}} <i class="fa-solid fa-star text-warning"></i></h5>
+                    <span class="badge text-bg-info p-2"> {{product.category}}</span>            
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
